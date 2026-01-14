@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "books-api"
+version = "0.1.0"
+description = "Projeto para scraping de livros da Fase 1 do curso de Machine Learning Engineer - FIAP"
+authors = ["juliano.monteiro@outlook.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+pydantic = "^2.6.0"
+pydantic-settings = "^2.1.0"
+beautifulsoup4 = "^4.12.0"
+httpx = "^0.26.0"
+pandas = "^2.2.0"
+sqlalchemy = "^2.0.0"
+python-dotenv = "^1.0.1"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+streamlit = "^1.31.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.1.1"
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true

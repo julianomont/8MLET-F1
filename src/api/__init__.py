@@ -1,0 +1,3 @@
+"""
+Pacote da API REST.
+"""
