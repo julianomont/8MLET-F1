@@ -1,0 +1,30 @@
+# Dockerfile.dashboard
+
+# Stage 1: Build requirements
+FROM python:3.9-slim as builder
+
+WORKDIR /app
+
+RUN pip install poetry
+
+COPY pyproject.toml poetry.lock ./
+
+RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
+
+# Stage 2: Final image
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY --from=builder /app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source code
+COPY scripts/ ./scripts/
+
+# Expose port
+EXPOSE 8501
+
+# Command to run the application
+CMD ["streamlit", "run", "scripts/dashboard.py", "--server.port", "8501", "--server.address", "0.0.0.0"]

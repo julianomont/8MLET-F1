@@ -19,8 +19,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+import os
+
 # URL base da API
-API_BASE_URL = "http://localhost:8000/api/v1"
+API_BASE_URL = os.getenv("API_URL", "http://localhost:8000/api/v1")
 
 
 def get_metrics():
