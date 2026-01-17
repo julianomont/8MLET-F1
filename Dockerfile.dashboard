@@ -5,7 +5,7 @@ FROM python:3.9-slim as builder
 
 WORKDIR /app
 
-RUN pip install poetry
+RUN pip install poetry poetry-plugin-export
 
 COPY pyproject.toml poetry.lock ./
 
@@ -24,7 +24,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY scripts/ ./scripts/
 
 # Expose port
-EXPOSE 8501
+ENV PORT=8501
+EXPOSE ${PORT}
+
+# Create data directory
+RUN mkdir -p /app/data
 
 # Command to run the application
-CMD ["streamlit", "run", "scripts/dashboard.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+CMD streamlit run scripts/dashboard.py --server.port ${PORT} --server.address 0.0.0.0

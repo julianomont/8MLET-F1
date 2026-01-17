@@ -109,3 +109,33 @@ def authenticate_user(db: Session, username: str, password: str) -> Optional[Use
 def get_user_by_username(db: Session, username: str) -> Optional[UserModel]:
     """Busca usuário pelo nome de usuário."""
     return db.query(UserModel).filter(UserModel.username == username).first()
+
+
+def ensure_admin_user(db: Session):
+    """
+    Garante que o usuário administrador padrão existe.
+    Criado na inicialização para evitar problemas em ambientes remotos.
+    """
+    from src.core.logging import logger
+    
+    admin_username = "admin"
+    existing_admin = get_user_by_username(db, admin_username)
+    
+    if not existing_admin:
+        logger.info(f"Usuário '{admin_username}' não encontrado. Criando...")
+        try:
+            admin_user = UserModel(
+                username=admin_username,
+                email="admin@booksapi.com",
+                hashed_password=get_password_hash("admin-8MLET"),
+                is_active=True,
+                is_admin=True
+            )
+            db.add(admin_user)
+            db.commit()
+            logger.info(f"Usuário '{admin_username}' criado com sucesso.")
+        except Exception as e:
+            logger.error(f"Erro ao criar usuário administrador: {e}")
+            db.rollback()
+    else:
+        logger.info(f"Usuário administrador '{admin_username}' já existe no banco.")

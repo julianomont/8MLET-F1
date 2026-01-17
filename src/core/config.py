@@ -21,7 +21,15 @@ class Settings(BaseSettings):
     # Caminhos do sistema
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     DATA_PATH: Path = BASE_DIR / "data" / "processed" / "books.csv"
-    DATABASE_URL: str = f"sqlite:///{BASE_DIR}/data/books.db"
+    
+    # Define o caminho do banco de dados
+    # No Cloud Run, apenas /tmp é gravável
+    @property
+    def DATABASE_URL(self) -> str:
+        import os
+        if os.getenv("K_SERVICE"):
+            return "sqlite:////tmp/books.db"
+        return f"sqlite:///{self.BASE_DIR}/data/books.db"
     
     # Configurações JWT
     JWT_SECRET_KEY: str = "chave-secreta-desenvolvimento-altere-em-producao"

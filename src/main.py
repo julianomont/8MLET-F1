@@ -4,7 +4,7 @@ Ponto de entrada principal da API FastAPI.
 from fastapi import FastAPI
 from src.api.v1.router import api_router
 from src.core.config import settings
-from src.core.database import engine, Base
+from src.core.database import engine, Base, SessionLocal
 from src.models.book import BookModel
 from src.core.logging import logger
 from src.core.middleware import LoggingMiddleware
@@ -62,8 +62,34 @@ app.include_router(api_router, prefix=settings.API_V1_STR)
 async def startup_event():
     """Evento executado ao iniciar a aplicação."""
     logger.info("Iniciando Books API...")
-    # Cria as tabelas no banco de dados
-    Base.metadata.create_all(bind=engine)
+    try:
+        # Garante que o diretório do banco de dados existe
+        import os
+        db_url = settings.DATABASE_URL
+        if "sqlite" in db_url:
+            db_path = db_url.replace("sqlite:///", "")
+            if db_path.startswith("/"):  # Caminho absoluto
+                db_dir = os.path.dirname(db_path)
+                if db_dir and not os.path.exists(db_dir):
+                    logger.info(f"Criando diretório do banco de dados: {db_dir}")
+                    os.makedirs(db_dir, exist_ok=True)
+
+        # Cria as tabelas no banco de dados
+        Base.metadata.create_all(bind=engine)
+        
+        # Garante que o usuário admin existe
+        from src.services.auth_service import ensure_admin_user
+        db = SessionLocal()
+        try:
+            ensure_admin_user(db)
+        finally:
+            db.close()
+        logger.info("Inicialização do banco de dados e seeding concluídos.")
+    except Exception as e:
+        logger.error(f"Erro durante a inicialização do banco: {e}")
+        logger.warning("A aplicação continuará subindo para responder ao health check.")
+
+    logger.info("Books API pronta e ouvindo.")
 
 @app.get("/", tags=["Raiz"], summary="Página inicial", description="Retorna mensagem de boas-vindas")
 def root():

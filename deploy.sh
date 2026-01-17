@@ -23,7 +23,7 @@ fi
 
 # 3. Build and Push API Image
 echo "Building and Pushing API Image..."
-gcloud builds submit --tag "$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/api:latest" -f Dockerfile.api .
+gcloud builds submit --config cloudbuild.api.yaml --substitutions=_IMAGE="$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/api:latest" .
 
 # 4. Deploy API to Cloud Run
 echo "Deploying API to Cloud Run..."
@@ -40,7 +40,7 @@ echo "API Deployed at: $API_URL"
 
 # 5. Build and Push Dashboard Image
 echo "Building and Pushing Dashboard Image..."
-gcloud builds submit --tag "$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/dashboard:latest" -f Dockerfile.dashboard .
+gcloud builds submit --config cloudbuild.dashboard.yaml --substitutions=_IMAGE="$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/dashboard:latest" .
 
 # 6. Deploy Dashboard to Cloud Run
 echo "Deploying Dashboard to Cloud Run..."
