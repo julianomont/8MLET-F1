@@ -10,7 +10,7 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 | **Dashboard** | [https://books-dashboard-o2d6gk76rq-uc.a.run.app](https://books-dashboard-o2d6gk76rq-uc.a.run.app) |
 | **Deploy** | [https://books-api-o2d6gk76rq-uc.a.run.app](https://books-api-o2d6gk76rq-uc.a.run.app) |
 | **Repositório** | [GitHub](https://github.com/julianomont/8MLET-F1.git) |
-| **Vídeo Demonstração** | [em breve](em breve) |
+| **Vídeo Demonstração** | em breve |
 
 ---
 
