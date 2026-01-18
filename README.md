@@ -6,10 +6,11 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 
 | Recurso | Link |
 |---------|------|
-| **Deploy** | [https://books-api.example.com](https://books-api.example.com) *(atualizar com link real)* |
-| **Vídeo Demonstração** | [https://youtube.com/watch?v=xxxxx](https://youtube.com/watch?v=xxxxx) *(atualizar com link real)* |
-| **Documentação Swagger** | [http://localhost:8000/docs](http://localhost:8000/docs) |
-| **Repositório** | [GitHub](https://github.com/seu-usuario/MLE-P1) |
+| **Documentação Swagger** | [https://books-api-o2d6gk76rq-uc.a.run.app/docs](https://books-api-o2d6gk76rq-uc.a.run.app/docs) |
+| **Dashboard** | [https://books-dashboard-o2d6gk76rq-uc.a.run.app](https://books-dashboard-o2d6gk76rq-uc.a.run.app) |
+| **Deploy** | [https://books-api-o2d6gk76rq-uc.a.run.app](https://books-api-o2d6gk76rq-uc.a.run.app) |
+| **Repositório** | [GitHub](https://github.com/julianomont/8MLET-F1.git) |
+| **Vídeo Demonstração** | [em breve](em breve) |
 
 ---
 
