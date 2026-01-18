@@ -1,6 +1,6 @@
 # Books API
 
-**Tech Challenge - Fase 1 - PosTech 8MLET**
+**Tech Challenge - Fase 1 - Welcome to Fundamentos ML**
 
 * **Por:** Juliano Monteiro (rm369594)
 * **GitHub:** [https://github.com/julianomont](https://github.com/julianomont)
