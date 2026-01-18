@@ -116,20 +116,6 @@ API REST robusta que:
 | **Monitoramento** | Logs estruturados, métricas e dashboard Streamlit |
 | **Documentação** | Swagger UI integrada em `/docs` |
 
-### Tecnologias Utilizadas
-
-| Tecnologia | Uso |
-|------------|-----|
-| **FastAPI** | Framework para APIs REST |
-| **SQLAlchemy** | ORM para banco de dados |
-| **Pydantic** | Validação de dados |
-| **BeautifulSoup4** | Web scraping |
-| **httpx** | Cliente HTTP assíncrono |
-| **pandas** | Análise de dados e estatísticas |
-| **python-jose** | Autenticação JWT |
-| **Streamlit** | Dashboard de monitoramento |
-| **PostgreSQL** | Banco de dados relacional |
-
 ---
 
 ## Arquitetura
