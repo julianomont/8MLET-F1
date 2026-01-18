@@ -33,13 +33,13 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 
 ---
 
-## Descrição do Projeto
+## Requisitos do Projeto
 
 ### Objetivo
 
-Desenvolver uma API REST robusta que:
+API REST robusta que:
 1. **Extrai dados** via web scraping de ~1000 livros do site books.toscrape.com
-2. **Armazena** os dados em banco PostgreSQL (Supabase/CloudSQL)
+2. **Armazena** os dados em banco PostgreSQL
 3. **Disponibiliza** endpoints HTTP para consulta, filtros e estatísticas
 4. **Prepara dados** para consumo por modelos de Machine Learning
 5. **Monitora** performance com logs estruturados e métricas
