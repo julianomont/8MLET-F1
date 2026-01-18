@@ -1,24 +1,2 @@
 INFO:     Will watch for changes in these directories: ['/Users/julianomonteiro/GitWorkspace/8MLET-F1']
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [39161] using WatchFiles
-INFO:     Started server process [39213]
-INFO:     Waiting for application startup.
-2026-01-17 16:28:53,858 [INFO] books-api: Iniciando Books API...
-2026-01-17 16:28:53,864 [INFO] books-api: Usuário administrador 'admin' já existe no banco.
-2026-01-17 16:28:53,864 [INFO] books-api: Inicialização do banco de dados e seeding concluídos.
-2026-01-17 16:28:53,864 [INFO] books-api: Books API pronta e ouvindo.
-INFO:     Application startup complete.
-2026-01-17 16:28:53,912 [INFO] books-api: REQUEST: {"request_id": "1768678133903", "timestamp": "2026-01-17T19:28:53.912181", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 8.49, "error": null}
-INFO:     127.0.0.1:58989 - "GET /api/v1/health HTTP/1.1" 200 OK
-2026-01-17 16:28:53,917 [INFO] books-api: REQUEST: {"request_id": "1768678133915", "timestamp": "2026-01-17T19:28:53.917191", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.54, "error": null}
-INFO:     127.0.0.1:58991 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
-2026-01-17 16:28:54,160 [INFO] books-api: REQUEST: {"request_id": "1768678134159", "timestamp": "2026-01-17T19:28:54.160761", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.02, "error": null}
-INFO:     127.0.0.1:58994 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
-2026-01-17 16:29:04,735 [INFO] books-api: REQUEST: {"request_id": "1768678144721", "timestamp": "2026-01-17T19:29:04.735390", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 13.88, "error": null}
-INFO:     127.0.0.1:59021 - "GET /api/v1/health HTTP/1.1" 200 OK
-2026-01-17 16:29:36,642 [INFO] books-api: REQUEST: {"request_id": "1768678176627", "timestamp": "2026-01-17T19:29:36.641326", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "query_params": "", "status_code": 200, "duration_ms": 13.71, "error": null}
-INFO:     127.0.0.1:59103 - "GET /docs HTTP/1.1" 200 OK
-2026-01-17 16:29:36,827 [INFO] books-api: REQUEST: {"request_id": "1768678176758", "timestamp": "2026-01-17T19:29:36.827608", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/openapi.json", "query_params": "", "status_code": 200, "duration_ms": 68.69, "error": null}
-INFO:     127.0.0.1:59103 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
-2026-01-17 16:29:54,133 [INFO] books-api: REQUEST: {"request_id": "1768678193797", "timestamp": "2026-01-17T19:29:54.133469", "client_ip": "127.0.0.1", "method": "POST", "endpoint": "/api/v1/auth/login", "query_params": "", "status_code": 200, "duration_ms": 335.48, "error": null}
-INFO:     127.0.0.1:59105 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+ERROR:    [Errno 48] Address already in use

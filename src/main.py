@@ -63,16 +63,6 @@ async def startup_event():
     """Evento executado ao iniciar a aplicação."""
     logger.info("Iniciando Books API...")
     try:
-        # Garante que o diretório do banco de dados existe
-        import os
-        db_url = settings.DATABASE_URL
-        if "sqlite" in db_url:
-            db_path = db_url.replace("sqlite:///", "")
-            if db_path.startswith("/"):  # Caminho absoluto
-                db_dir = os.path.dirname(db_path)
-                if db_dir and not os.path.exists(db_dir):
-                    logger.info(f"Criando diretório do banco de dados: {db_dir}")
-                    os.makedirs(db_dir, exist_ok=True)
 
         # Cria as tabelas no banco de dados
         Base.metadata.create_all(bind=engine)

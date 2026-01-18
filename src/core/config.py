@@ -4,6 +4,7 @@ Carrega variáveis de ambiente e define valores padrão.
 """
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
+from typing import Optional, Any
 
 class Settings(BaseSettings):
     """Configurações gerais da API."""
@@ -22,14 +23,17 @@ class Settings(BaseSettings):
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     DATA_PATH: Path = BASE_DIR / "data" / "processed" / "books.csv"
     
-    # Define o caminho do banco de dados
-    # No Cloud Run, apenas /tmp é gravável
-    @property
-    def DATABASE_URL(self) -> str:
-        import os
-        if os.getenv("K_SERVICE"):
-            return "sqlite:////tmp/books.db"
-        return f"sqlite:///{self.BASE_DIR}/data/books.db"
+    
+    # Define o caminho do banco de dados (Obrigatório via environment)
+    DATABASE_URL: Optional[str] = None
+
+    def model_post_init(self, __context: Any):
+        if not self.DATABASE_URL:
+             # Tenta ler do ambiente explicitamente se não veio pelo pydantic
+             import os
+             self.DATABASE_URL = os.getenv("DATABASE_URL")
+             if not self.DATABASE_URL:
+                 raise ValueError("DATABASE_URL environment variable is required")
     
     # Configurações JWT
     JWT_SECRET_KEY: str = "chave-secreta-desenvolvimento-altere-em-producao"

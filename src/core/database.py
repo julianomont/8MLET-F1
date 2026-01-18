@@ -7,9 +7,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from src.core.config import settings
 
 # Cria o engine de conexão com o banco
-engine = create_engine(
-    settings.DATABASE_URL, connect_args={"check_same_thread": False}
-)
+engine = create_engine(settings.DATABASE_URL)
 
 # Fábrica de sessões
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

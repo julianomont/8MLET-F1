@@ -1,0 +1,130 @@
+INFO:     Will watch for changes in these directories: ['/Users/julianomonteiro/GitWorkspace/8MLET-F1']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [63242] using WatchFiles
+INFO:     Started server process [63293]
+INFO:     Waiting for application startup.
+2026-01-18 09:21:47,663 [INFO] books-api: Iniciando Books API...
+2026-01-18 09:21:51,441 [INFO] books-api: Usuário administrador 'admin' já existe no banco.
+2026-01-18 09:21:51,614 [INFO] books-api: Inicialização do banco de dados e seeding concluídos.
+2026-01-18 09:21:51,614 [INFO] books-api: Books API pronta e ouvindo.
+INFO:     Application startup complete.
+2026-01-18 09:21:52,699 [INFO] books-api: REQUEST: {"request_id": "1768738911811", "timestamp": "2026-01-18T12:21:52.699747", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 887.85, "error": null}
+INFO:     127.0.0.1:50359 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:21:52,706 [INFO] books-api: REQUEST: {"request_id": "1768738912704", "timestamp": "2026-01-18T12:21:52.706437", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.74, "error": null}
+INFO:     127.0.0.1:50367 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:21:52,932 [INFO] books-api: REQUEST: {"request_id": "1768738912930", "timestamp": "2026-01-18T12:21:52.932917", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 2.13, "error": null}
+INFO:     127.0.0.1:50369 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:22:45,917 [INFO] books-api: REQUEST: {"request_id": "1768738965912", "timestamp": "2026-01-18T12:22:45.917294", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "query_params": "", "status_code": 200, "duration_ms": 4.7, "error": null}
+INFO:     127.0.0.1:50513 - "GET /docs HTTP/1.1" 200 OK
+2026-01-18 09:22:46,091 [INFO] books-api: REQUEST: {"request_id": "1768738966065", "timestamp": "2026-01-18T12:22:46.091350", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/openapi.json", "query_params": "", "status_code": 200, "duration_ms": 25.57, "error": null}
+INFO:     127.0.0.1:50513 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
+2026-01-18 09:23:11,495 [INFO] books-api: REQUEST: {"request_id": "1768738990620", "timestamp": "2026-01-18T12:23:11.495169", "client_ip": "127.0.0.1", "method": "POST", "endpoint": "/api/v1/auth/login", "query_params": "", "status_code": 200, "duration_ms": 874.8, "error": null}
+INFO:     127.0.0.1:50575 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+2026-01-18 09:23:40,719 [INFO] books-api: REQUEST: {"request_id": "1768739020161", "timestamp": "2026-01-18T12:23:40.718960", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/categories/", "query_params": "", "status_code": 200, "duration_ms": 557.62, "error": null}
+INFO:     127.0.0.1:50649 - "GET /api/v1/categories/ HTTP/1.1" 200 OK
+2026-01-18 09:23:48,280 [INFO] books-api: REQUEST: {"request_id": "1768739027398", "timestamp": "2026-01-18T12:23:48.280620", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 882.22, "error": null}
+INFO:     127.0.0.1:50669 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:23:48,293 [INFO] books-api: REQUEST: {"request_id": "1768739028292", "timestamp": "2026-01-18T12:23:48.293121", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.75, "error": null}
+INFO:     127.0.0.1:50674 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:23:48,378 [INFO] books-api: REQUEST: {"request_id": "1768739028376", "timestamp": "2026-01-18T12:23:48.378538", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.65, "error": null}
+INFO:     127.0.0.1:50677 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:23:54,320 [INFO] books-api: REQUEST: {"request_id": "1768739033440", "timestamp": "2026-01-18T12:23:54.320632", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 879.88, "error": null}
+INFO:     127.0.0.1:50689 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:23:54,327 [INFO] books-api: REQUEST: {"request_id": "1768739034327", "timestamp": "2026-01-18T12:23:54.327751", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.64, "error": null}
+INFO:     127.0.0.1:50694 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:23:54,378 [INFO] books-api: REQUEST: {"request_id": "1768739034377", "timestamp": "2026-01-18T12:23:54.378645", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.86, "error": null}
+INFO:     127.0.0.1:50696 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:23:57,537 [INFO] books-api: REQUEST: {"request_id": "1768739037004", "timestamp": "2026-01-18T12:23:57.537774", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/categories/", "query_params": "", "status_code": 200, "duration_ms": 533.44, "error": null}
+INFO:     127.0.0.1:50704 - "GET /api/v1/categories/ HTTP/1.1" 200 OK
+2026-01-18 09:24:00,303 [INFO] books-api: REQUEST: {"request_id": "1768739039417", "timestamp": "2026-01-18T12:24:00.303501", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 885.57, "error": null}
+INFO:     127.0.0.1:50714 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:00,313 [INFO] books-api: REQUEST: {"request_id": "1768739040311", "timestamp": "2026-01-18T12:24:00.313272", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.45, "error": null}
+INFO:     127.0.0.1:50721 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:00,365 [INFO] books-api: REQUEST: {"request_id": "1768739040365", "timestamp": "2026-01-18T12:24:00.365946", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.78, "error": null}
+INFO:     127.0.0.1:50723 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:06,300 [INFO] books-api: REQUEST: {"request_id": "1768739045412", "timestamp": "2026-01-18T12:24:06.300724", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 888.08, "error": null}
+INFO:     127.0.0.1:50738 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:06,309 [INFO] books-api: REQUEST: {"request_id": "1768739046308", "timestamp": "2026-01-18T12:24:06.309299", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.63, "error": null}
+INFO:     127.0.0.1:50741 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:06,331 [INFO] books-api: REQUEST: {"request_id": "1768739046330", "timestamp": "2026-01-18T12:24:06.331464", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.75, "error": null}
+INFO:     127.0.0.1:50744 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:12,256 [INFO] books-api: REQUEST: {"request_id": "1768739051371", "timestamp": "2026-01-18T12:24:12.256826", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 885.05, "error": null}
+INFO:     127.0.0.1:50757 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:12,264 [INFO] books-api: REQUEST: {"request_id": "1768739052263", "timestamp": "2026-01-18T12:24:12.264515", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.24, "error": null}
+INFO:     127.0.0.1:50761 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:12,296 [INFO] books-api: REQUEST: {"request_id": "1768739052295", "timestamp": "2026-01-18T12:24:12.296805", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.9, "error": null}
+INFO:     127.0.0.1:50763 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:18,227 [INFO] books-api: REQUEST: {"request_id": "1768739057341", "timestamp": "2026-01-18T12:24:18.227001", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 885.85, "error": null}
+INFO:     127.0.0.1:50779 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:18,235 [INFO] books-api: REQUEST: {"request_id": "1768739058235", "timestamp": "2026-01-18T12:24:18.235945", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.67, "error": null}
+INFO:     127.0.0.1:50784 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:18,266 [INFO] books-api: REQUEST: {"request_id": "1768739058265", "timestamp": "2026-01-18T12:24:18.266093", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.79, "error": null}
+INFO:     127.0.0.1:50786 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:24,207 [INFO] books-api: REQUEST: {"request_id": "1768739063315", "timestamp": "2026-01-18T12:24:24.207023", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 891.47, "error": null}
+INFO:     127.0.0.1:50800 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:24,214 [INFO] books-api: REQUEST: {"request_id": "1768739064213", "timestamp": "2026-01-18T12:24:24.214194", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.62, "error": null}
+INFO:     127.0.0.1:50806 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:24,238 [INFO] books-api: REQUEST: {"request_id": "1768739064238", "timestamp": "2026-01-18T12:24:24.238842", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.78, "error": null}
+INFO:     127.0.0.1:50808 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:29,421 [INFO] books-api: REQUEST: {"request_id": "1768739068242", "timestamp": "2026-01-18T12:24:29.421211", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/books/", "query_params": "page=1&limit=100", "status_code": 200, "duration_ms": 1178.86, "error": null}
+INFO:     127.0.0.1:50820 - "GET /api/v1/books/?page=1&limit=100 HTTP/1.1" 200 OK
+2026-01-18 09:24:31,342 [INFO] books-api: REQUEST: {"request_id": "1768739069273", "timestamp": "2026-01-18T12:24:31.342691", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 2068.96, "error": null}
+INFO:     127.0.0.1:50825 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:31,352 [INFO] books-api: REQUEST: {"request_id": "1768739071352", "timestamp": "2026-01-18T12:24:31.352715", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.65, "error": null}
+INFO:     127.0.0.1:50836 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:31,385 [INFO] books-api: REQUEST: {"request_id": "1768739071384", "timestamp": "2026-01-18T12:24:31.385820", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.89, "error": null}
+INFO:     127.0.0.1:50839 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:37,313 [INFO] books-api: REQUEST: {"request_id": "1768739076430", "timestamp": "2026-01-18T12:24:37.313636", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 882.97, "error": null}
+INFO:     127.0.0.1:50852 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:37,322 [INFO] books-api: REQUEST: {"request_id": "1768739077321", "timestamp": "2026-01-18T12:24:37.322096", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.63, "error": null}
+INFO:     127.0.0.1:50856 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:37,349 [INFO] books-api: REQUEST: {"request_id": "1768739077348", "timestamp": "2026-01-18T12:24:37.349326", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.83, "error": null}
+INFO:     127.0.0.1:50858 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:43,271 [INFO] books-api: REQUEST: {"request_id": "1768739082391", "timestamp": "2026-01-18T12:24:43.271437", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 879.83, "error": null}
+INFO:     127.0.0.1:50871 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:43,281 [INFO] books-api: REQUEST: {"request_id": "1768739083279", "timestamp": "2026-01-18T12:24:43.280998", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.5, "error": null}
+INFO:     127.0.0.1:50876 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:43,330 [INFO] books-api: REQUEST: {"request_id": "1768739083329", "timestamp": "2026-01-18T12:24:43.330656", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.05, "error": null}
+INFO:     127.0.0.1:50878 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:49,251 [INFO] books-api: REQUEST: {"request_id": "1768739088372", "timestamp": "2026-01-18T12:24:49.251671", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 878.79, "error": null}
+INFO:     127.0.0.1:50892 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:49,260 [INFO] books-api: REQUEST: {"request_id": "1768739089259", "timestamp": "2026-01-18T12:24:49.260188", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.67, "error": null}
+INFO:     127.0.0.1:50897 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:49,286 [INFO] books-api: REQUEST: {"request_id": "1768739089285", "timestamp": "2026-01-18T12:24:49.286666", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.9, "error": null}
+INFO:     127.0.0.1:50899 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:24:55,225 [INFO] books-api: REQUEST: {"request_id": "1768739094346", "timestamp": "2026-01-18T12:24:55.224981", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 878.24, "error": null}
+INFO:     127.0.0.1:50915 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:24:55,234 [INFO] books-api: REQUEST: {"request_id": "1768739095233", "timestamp": "2026-01-18T12:24:55.234494", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.01, "error": null}
+INFO:     127.0.0.1:50924 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:24:55,267 [INFO] books-api: REQUEST: {"request_id": "1768739095266", "timestamp": "2026-01-18T12:24:55.267688", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.94, "error": null}
+INFO:     127.0.0.1:50926 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:01,196 [INFO] books-api: REQUEST: {"request_id": "1768739100310", "timestamp": "2026-01-18T12:25:01.196412", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 886.26, "error": null}
+INFO:     127.0.0.1:50942 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:01,205 [INFO] books-api: REQUEST: {"request_id": "1768739101203", "timestamp": "2026-01-18T12:25:01.205331", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.83, "error": null}
+INFO:     127.0.0.1:50948 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:01,253 [INFO] books-api: REQUEST: {"request_id": "1768739101251", "timestamp": "2026-01-18T12:25:01.253038", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.16, "error": null}
+INFO:     127.0.0.1:50950 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:07,203 [INFO] books-api: REQUEST: {"request_id": "1768739106301", "timestamp": "2026-01-18T12:25:07.202484", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 900.52, "error": null}
+INFO:     127.0.0.1:50965 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:07,211 [INFO] books-api: REQUEST: {"request_id": "1768739107209", "timestamp": "2026-01-18T12:25:07.211244", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 1.62, "error": null}
+INFO:     127.0.0.1:50969 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:07,251 [INFO] books-api: REQUEST: {"request_id": "1768739107250", "timestamp": "2026-01-18T12:25:07.251810", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.51, "error": null}
+INFO:     127.0.0.1:50971 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:13,181 [INFO] books-api: REQUEST: {"request_id": "1768739112296", "timestamp": "2026-01-18T12:25:13.180584", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 884.33, "error": null}
+INFO:     127.0.0.1:50983 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:13,192 [INFO] books-api: REQUEST: {"request_id": "1768739113189", "timestamp": "2026-01-18T12:25:13.192385", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 2.7, "error": null}
+INFO:     127.0.0.1:50989 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:13,252 [INFO] books-api: REQUEST: {"request_id": "1768739113250", "timestamp": "2026-01-18T12:25:13.252155", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.63, "error": null}
+INFO:     127.0.0.1:50991 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:19,210 [INFO] books-api: REQUEST: {"request_id": "1768739118319", "timestamp": "2026-01-18T12:25:19.210729", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 891.35, "error": null}
+INFO:     127.0.0.1:51007 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:19,215 [INFO] books-api: REQUEST: {"request_id": "1768739119214", "timestamp": "2026-01-18T12:25:19.215223", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.82, "error": null}
+INFO:     127.0.0.1:51012 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:19,243 [INFO] books-api: REQUEST: {"request_id": "1768739119242", "timestamp": "2026-01-18T12:25:19.243807", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.58, "error": null}
+INFO:     127.0.0.1:51014 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:25,173 [INFO] books-api: REQUEST: {"request_id": "1768739124285", "timestamp": "2026-01-18T12:25:25.172825", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 887.49, "error": null}
+INFO:     127.0.0.1:51026 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:25,182 [INFO] books-api: REQUEST: {"request_id": "1768739125181", "timestamp": "2026-01-18T12:25:25.182007", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.68, "error": null}
+INFO:     127.0.0.1:51031 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:25,209 [INFO] books-api: REQUEST: {"request_id": "1768739125208", "timestamp": "2026-01-18T12:25:25.209453", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.83, "error": null}
+INFO:     127.0.0.1:51033 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK

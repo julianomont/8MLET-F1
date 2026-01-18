@@ -20,6 +20,8 @@ python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 streamlit = "^1.31.0"
 python-multipart = "^0.0.9"
+psycopg2-binary = "^2.9.11"
+bcrypt = "3.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
