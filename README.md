@@ -194,6 +194,42 @@ sequenceDiagram
 
 ---
 
+## Hospedagem no Google Cloud Platform (GCP)
+
+A aplicação é hospedada utilizando serviços serverless do Google Cloud, garantindo escalabilidade automática e baixo custo. A arquitetura é dividida em dois serviços principais rodando no Cloud Run.
+
+### Componentes do Deploy
+Toda a orquestração é feita pelo script deploy.sh, que automatiza os seguintes passos:
+
+**Artifact Registry (books-repo):**
+- Serve como o "Docker Hub" privado.
+- Armazena as versões das imagens Docker da API e do Dashboard.
+- Localização: us-central1.
+
+**Cloud Build:**
+- Constrói as imagens Docker na nuvem (sem depender da máquina local).
+- Usa os arquivos cloudbuild.api.yaml e cloudbuild.dashboard.yaml como instruções.
+
+**Cloud Run (Compute):**
+- Serviço 1: API (books-api):
+  - Container: src/main.py (FastAPI).
+  - Porta: 8000.
+  - Variáveis: DATABASE_URL (Conexão Postgres), JWT_SECRET_KEY (Segurança).
+- Serviço 2: Dashboard (books-dashboard):
+  - Container: scripts/dashboard.py (Streamlit).
+  - Porta: 8501.
+  - Variáveis: API_URL (Para consumir os dados da API).
+
+### Fluxo de Deploy
+
+**Build:** O deploy.sh envia o código para o Cloud Build.
+**Push:** As imagens construídas são salvas no Artifact Registry.
+**Deploy:** O Cloud Run puxa as novas imagens e sobe novas revisões dos serviços.
+**Configuração:** As variáveis de ambiente (como senhas do banco) são injetadas de forma segura durante o deploy (--set-env-vars).
+
+**Resumo da Arquitetura:**
+Cloud Build (Constrói) -> Artifact Registry (Armazena) -> Cloud Run (Executa API + Dashboard)
+
 ## Instalação e Configuração
 
 ### Requisitos
