@@ -2,14 +2,14 @@
 
 API REST para consulta de dados de livros extraídos via web scraping do site [books.toscrape.com](http://books.toscrape.com). Desenvolvida como projeto para o curso de **Machine Learning Engineer** da FIAP - 8MLET.
 
-## Links Importantes
+### Links Importantes
 
 | Recurso | Link |
 |---------|------|
-| **Documentação Swagger** | [https://books-api-o2d6gk76rq-uc.a.run.app/docs](https://books-api-o2d6gk76rq-uc.a.run.app/docs) |
-| **Dashboard** | [https://books-dashboard-o2d6gk76rq-uc.a.run.app](https://books-dashboard-o2d6gk76rq-uc.a.run.app) |
-| **Deploy** | [https://books-api-o2d6gk76rq-uc.a.run.app](https://books-api-o2d6gk76rq-uc.a.run.app) |
-| **Repositório** | [GitHub](https://github.com/julianomont/8MLET-F1.git) |
+| **Documentação Swagger** | <a href="https://books-api-o2d6gk76rq-uc.a.run.app/docs" target="_blank">Ver Documentação</a> |
+| **Dashboard** | <a href="https://books-dashboard-o2d6gk76rq-uc.a.run.app" target="_blank">Acessar Dashboard</a> |
+| **Deploy** | <a href="https://books-api-o2d6gk76rq-uc.a.run.app" target="_blank">API Base URL</a> |
+| **Repositório** | <a href="https://github.com/julianomont/8MLET-F1.git" target="_blank">GitHub</a> |
 | **Vídeo Demonstração** | em breve |
 
 ---
