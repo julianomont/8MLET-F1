@@ -144,8 +144,7 @@ flowchart TB
 ### Estrutura de Pastas
 
 ```
-MLE-P1/
-├── 📁 data/                    # Dados (books.db)
+8MLET-F1/
 ├── 📁 docs/                    # Documentação adicional
 ├── 📁 scripts/                 # Scripts auxiliares
 │   ├── run_scraper.py          # Execução do scraper
