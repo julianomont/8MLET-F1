@@ -222,12 +222,23 @@ Toda a orquestração é feita pelo script deploy.sh, que automatiza os seguinte
   - Variáveis: API_URL (Para consumir os dados da API).
 
 ### Fluxo de Deploy
-| Passo | Descrição |
-|---------|------|
-| **Build** | O deploy.sh envia o código para o Cloud Build. |
-| **Push** | As imagens construídas são salvas no Artifact Registry. |
-| **Deploy** | O Cloud Run puxa as novas imagens e sobe novas revisões dos serviços. |
-| **Configuração** | As variáveis de ambiente (como senhas do banco) são injetadas de forma segura durante o deploy (--set-env-vars). |
+
+```mermaid
+graph LR
+    Local[Local Machine] -->|./deploy.sh| CloudBuild[Cloud Build]
+    CloudBuild -->|Build & Push| ArtifactRegistry[Artifact Registry]
+    ArtifactRegistry -->|Pull Images| CloudRun[Cloud Run]
+    
+    subgraph GCP[Google Cloud Platform]
+        CloudBuild
+        ArtifactRegistry
+        CloudRun
+    end
+    
+    subgraph DeployConfig[Configuração]
+        EnvVars[Environment Variables] -.->|Inject| CloudRun
+    end
+```
 
 ### Deploy Automático (GCP)
 
