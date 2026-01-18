@@ -23,13 +23,14 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 
 ## Índice
 
-1. [Descrição do Projeto](#descrição-do-projeto)
+1. [Requisitos do Projeto](#descrição-do-projeto)
 2. [Arquitetura](#arquitetura)
-3. [Instalação e Configuração](#instalação-e-configuração)
-4. [Execução](#execução)
-5. [Documentação das Rotas da API](#documentação-das-rotas-da-api)
-6. [Exemplos de Chamadas](#exemplos-de-chamadas)
-7. [Dashboard de Monitoramento](#dashboard-de-monitoramento)
+3. [Hospedagem no Google Cloud Platform (GCP)](#hospedagem-no-google-cloud-platform-gcp)
+4. [Instalação e Configuração](#instalação-e-configuração)
+5. [Execução](#execução)
+6. [Documentação das Rotas da API](#documentação-das-rotas-da-api)
+7. [Exemplos de Chamadas](#exemplos-de-chamadas)
+8. [Dashboard de Monitoramento](#dashboard-de-monitoramento)
 
 ---
 
@@ -228,6 +229,24 @@ Toda a orquestração é feita pelo script deploy.sh, que automatiza os seguinte
 | **Deploy** | O Cloud Run puxa as novas imagens e sobe novas revisões dos serviços. |
 | **Configuração** | As variáveis de ambiente (como senhas do banco) são injetadas de forma segura durante o deploy (--set-env-vars). |
 
+### Deploy Automático (GCP)
+
+Para realizar o deploy no Google Cloud Platform (Cloud Run):
+
+1. **Configurar o script de deploy**:
+   Edite o arquivo `deploy.sh` e atualize as variáveis `DATABASE_URL` e `JWT_SECRET_KEY`.
+
+2. **Executar o script**:
+   ```bash
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```
+   
+   O script irá:
+   - Criar o repositório no Artifact Registry (se não existir)
+   - Construir as imagens Docker da API e Dashboard
+   - Fazer o deploy no Cloud Run configurando as variáveis de ambiente
+
 **Resumo da Arquitetura:**
 
     Cloud Build (Constrói) -> Artifact Registry (Armazena) -> Cloud Run (Executa API + Dashboard)
@@ -308,26 +327,6 @@ uvicorn src.main:app --reload
 # Executa testes unitários e de integração
 pytest
 ```
-
----
-
-## Deploy Automático (GCP)
-
-Para realizar o deploy no Google Cloud Platform (Cloud Run):
-
-1. **Configurar o script de deploy**:
-   Edite o arquivo `deploy.sh` e atualize as variáveis `DATABASE_URL` e `JWT_SECRET_KEY`.
-
-2. **Executar o script**:
-   ```bash
-   chmod +x deploy.sh
-   ./deploy.sh
-   ```
-   
-   O script irá:
-   - Criar o repositório no Artifact Registry (se não existir)
-   - Construir as imagens Docker da API e Dashboard
-   - Fazer o deploy no Cloud Run configurando as variáveis de ambiente
 
 ---
 
