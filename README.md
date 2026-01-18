@@ -24,6 +24,7 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 ## Resumo Técnico: Books API (Tech Challenge Fase 1: Welcome to Machine Learning Engineering)
 
 ### Visão Geral do Projeto
+
 O projeto Books API foi desenvolvido como parte do Tech Challenge da pós-graduação em Machine Learning Engineering (8MLET) da FIAP. O objetivo principal foi criar uma arquitetura robusta de Engenharia de Dados capaz de coletar, armazenar, processar e disponibilizar dados para futuros modelos de Machine Learning.
 
 O sistema simula um pipeline real de dados, onde informações desestruturadas (HTML de um site de livros) são transformadas em dados estruturados, enriquecidos e servidos via API para consumidores (Dashboards, Cientistas de Dados ou aplicações front-end).
