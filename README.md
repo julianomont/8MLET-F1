@@ -171,26 +171,58 @@ MLE-P1/
 
 ```mermaid
 sequenceDiagram
-    participant C as Cliente
-    participant R as Router
-    participant M as Middleware
-    participant E as Endpoint
-    participant S as Service
-    participant D as Repository
-    participant DB as PostgreSQL
+    autonumber
+    
+    participant C as 👤 Cliente
+    
+    box rgb(230, 240, 255) API Layer
+    participant R as 🌐 Router
+    participant M as 🛡️ Middleware
+    participant E as 📍 Endpoint
+    end
+
+    box rgb(255, 250, 230) Core Logic
+    participant S as 🧠 Service
+    participant D as 💾 Repository
+    end
+
+    participant DB as 🐘 PostgreSQL
 
     C->>R: GET /api/v1/books
-    R->>M: Logging + Métricas
-    M->>E: books.list_books()
-    E->>S: BookService.get_books_paginated()
-    S->>D: Repository.get_all()
+    activate R
+    R->>M: Process Request
+    activate M
+    note right of M: Início Cronômetro
+    
+    M->>E: Forward Request
+    activate E
+    
+    E->>S: get_books_paginated()
+    activate S
+    
+    S->>D: get_all(skip, limit)
+    activate D
+    
     D->>DB: SELECT * FROM books
-    DB-->>D: [BookModel, ...]
-    D-->>S: [BookSchema, ...]
+    activate DB
+    DB-->>D: Return Records
+    deactivate DB
+    
+    D-->>S: List[BookModel]
+    deactivate D
+    
     S-->>E: (books, total)
-    E-->>M: PaginatedBooks
-    M-->>R: Response + Log
-    R-->>C: JSON Response
+    deactivate S
+    
+    E-->>M: PaginatedResponse
+    deactivate E
+    
+    M-->>R: Log Request + Metrics
+    deactivate M
+    note right of M: Fim Cronômetro
+    
+    R-->>C: JSON Response 200 OK
+    deactivate R
 ```
 
 ---
