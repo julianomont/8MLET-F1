@@ -21,6 +21,20 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 
 ---
 
+## Índice
+
+1. [Resumo Técnico: Books API (Tech Challenge Fase 1: Welcome to Machine Learning Engineering)](#resumo-tecnico-books-api-tech-challenge-fase-1-welcome-to-machine-learning-engineering)
+2. [Requisitos do Projeto](#descrição-do-projeto)
+3. [Arquitetura](#arquitetura)
+4. [Hospedagem no Google Cloud Platform (GCP)](#hospedagem-no-google-cloud-platform-gcp)
+5. [Instalação e Configuração](#instalação-e-configuração)
+6. [Execução](#execução)
+7. [Documentação das Rotas da API](#documentação-das-rotas-da-api)
+8. [Exemplos de Chamadas](#exemplos-de-chamadas)
+9. [Dashboard de Monitoramento](#dashboard-de-monitoramento)
+
+---
+
 ## Resumo Técnico: Books API (Tech Challenge Fase 1: Welcome to Machine Learning Engineering)
 
 ### Visão Geral do Projeto
@@ -75,17 +89,6 @@ As tecnologias foram escolhidas visando performance e modernidade:
 - **Pipeline "ML-Ready"**: O sistema não apenas armazena dados, mas já possui endpoints dedicados a servir Features pré-processadas para modelos de Machine Learning.
 - **Monitoramento Integrado**: O dashboard não é apenas visual, ele consome métricas reais da API, permitindo observar latência e taxas de erro em tempo real.
 - **Design Resiliente**: Tratamento de erros no scraper com retentativas automáticas (retry logic) e fallback de conexão no banco de dados.
-
-## Índice
-
-1. [Requisitos do Projeto](#descrição-do-projeto)
-2. [Arquitetura](#arquitetura)
-3. [Hospedagem no Google Cloud Platform (GCP)](#hospedagem-no-google-cloud-platform-gcp)
-4. [Instalação e Configuração](#instalação-e-configuração)
-5. [Execução](#execução)
-6. [Documentação das Rotas da API](#documentação-das-rotas-da-api)
-7. [Exemplos de Chamadas](#exemplos-de-chamadas)
-8. [Dashboard de Monitoramento](#dashboard-de-monitoramento)
 
 ---
 
