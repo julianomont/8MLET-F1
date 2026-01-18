@@ -24,7 +24,7 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 ## Índice
 
 1. [Resumo Técnico: Books API (Tech Challenge Fase 1: Welcome to Machine Learning Engineering)](#resumo-tecnico-books-api-tech-challenge-fase-1-welcome-to-machine-learning-engineering)
-2. [Requisitos do Projeto](#descrição-do-projeto)
+2. [Especificações do Projeto](#especificações-do-projeto)
 3. [Arquitetura](#arquitetura)
 4. [Hospedagem no Google Cloud Platform (GCP)](#hospedagem-no-google-cloud-platform-gcp)
 5. [Instalação e Configuração](#instalação-e-configuração)
@@ -92,7 +92,7 @@ As tecnologias foram escolhidas visando performance e modernidade:
 
 ---
 
-## Requisitos do Projeto
+## Especificações do Projeto
 
 ### Objetivo
 
