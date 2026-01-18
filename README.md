@@ -494,45 +494,6 @@ Base URL: `http://localhost:8000/api/v1`
 
 ---
 
-## Dashboard de Monitoramento
-
-O projeto inclui um dashboard Streamlit para visualização de métricas em tempo real.
-
-O Dashboard é uma aplicação separada construída com a biblioteca Streamlit (scripts/dashboard.py), que consome dados de performance expostos pela própria API.
-
-**Arquitetura do Dashboard**
-
-Coleta de Dados (LoggingMiddleware):
-- Existe um interceptador (middleware) em src/core/middleware.py.
-- Ele cronometra cada requisição (tempo de início vs. fim).
-- Armazena métricas (status code, tempo de resposta, endpoint) em uma memória temporária (MetricsStore).
-
-Exposição dos Dados (/api/v1/metrics):
-- A API possui endpoints específicos para exportar esses dados em JSON.
-- GET /metrics/: Retorna contadores gerais (Total de Requests, Erros, Uptime).
-- GET /metrics/requests: Retorna a lista detalhada das últimas requisições.
-
-Visualização (Streamlit):
-- O script dashboard.py faz chamadas HTTP periódicas para esses endpoints.
-- Usa Pandas para transformar os JSONs em DataFrames.
-- Renderiza gráficos e tabelas interativas.
-
-**Executar o Dashboard:**
-```bash
-# Primeiro, inicie a API
-uvicorn src.main:app --reload
-
-# Em outro terminal, inicie o dashboard
-streamlit run scripts/dashboard.py
-```
-
-O dashboard exibe:
-- Total de requisições e taxa de erro
-- Gráficos por endpoint, status code e método HTTP
-- Tabela de requisições recentes com filtros
-
----
-
 ## Exemplos de Chamadas
 
 ### Login (Obter Token)
@@ -920,6 +881,44 @@ curl -X GET "http://localhost:8000/api/v1/health"
 
 ---
 
+## Dashboard de Monitoramento
+
+O projeto inclui um dashboard Streamlit para visualização de métricas em tempo real.
+
+O Dashboard é uma aplicação separada construída com a biblioteca Streamlit (scripts/dashboard.py), que consome dados de performance expostos pela própria API.
+
+**Arquitetura do Dashboard**
+
+Coleta de Dados (LoggingMiddleware):
+- Existe um interceptador (middleware) em src/core/middleware.py.
+- Ele cronometra cada requisição (tempo de início vs. fim).
+- Armazena métricas (status code, tempo de resposta, endpoint) em uma memória temporária (MetricsStore).
+
+Exposição dos Dados (/api/v1/metrics):
+- A API possui endpoints específicos para exportar esses dados em JSON.
+- GET /metrics/: Retorna contadores gerais (Total de Requests, Erros, Uptime).
+- GET /metrics/requests: Retorna a lista detalhada das últimas requisições.
+
+Visualização (Streamlit):
+- O script dashboard.py faz chamadas HTTP periódicas para esses endpoints.
+- Usa Pandas para transformar os JSONs em DataFrames.
+- Renderiza gráficos e tabelas interativas.
+
+**Executar o Dashboard:**
+```bash
+# Primeiro, inicie a API
+uvicorn src.main:app --reload
+
+# Em outro terminal, inicie o dashboard
+streamlit run scripts/dashboard.py
+```
+
+O dashboard exibe:
+- Total de requisições e taxa de erro
+- Gráficos por endpoint, status code e método HTTP
+- Tabela de requisições recentes com filtros
+
+---
 ## Documentação Adicional
 
 Para mais detalhes sobre a implementação, consulte:
