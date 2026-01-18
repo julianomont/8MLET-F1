@@ -221,14 +221,18 @@ Toda a orquestração é feita pelo script deploy.sh, que automatiza os seguinte
   - Variáveis: API_URL (Para consumir os dados da API).
 
 ### Fluxo de Deploy
-
-**Build:** O deploy.sh envia o código para o Cloud Build.
-**Push:** As imagens construídas são salvas no Artifact Registry.
-**Deploy:** O Cloud Run puxa as novas imagens e sobe novas revisões dos serviços.
-**Configuração:** As variáveis de ambiente (como senhas do banco) são injetadas de forma segura durante o deploy (--set-env-vars).
+| Passo | Descrição |
+|---------|------|
+| **Build:** O deploy.sh envia o código para o Cloud Build. |
+| **Push:** As imagens construídas são salvas no Artifact Registry. |
+| **Deploy:** O Cloud Run puxa as novas imagens e sobe novas revisões dos serviços. |
+| **Configuração:** As variáveis de ambiente (como senhas do banco) são injetadas de forma segura durante o deploy (--set-env-vars). |
 
 **Resumo da Arquitetura:**
-Cloud Build (Constrói) -> Artifact Registry (Armazena) -> Cloud Run (Executa API + Dashboard)
+```mermaid
+flowchart TB  
+    Cloud Build (Constrói) -> Artifact Registry (Armazena) -> Cloud Run (Executa API + Dashboard)
+```
 
 ## Instalação e Configuração
 
