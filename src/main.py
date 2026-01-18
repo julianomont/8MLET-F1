@@ -17,11 +17,9 @@ app = FastAPI(
 
 Esta API fornece acesso a uma base de dados de livros extraídos via web scraping do site https://books.toscrape.com/.
 
-### Tech Challenge - Fase 1  - PosTech 8MLET
-- **Por Juliano Monteiro (rm369594)**
-- **GitHub:** https://github.com/julianomont
-- **Email:** juliano.monteiro@outlook.com
-- **LinkedIn:** https://www.linkedin.com/in/julianofmonteiro
+### Tech Challenge - Fase 1 - PosTech 8MLET
+
+API desenvolvida para o curso de Machine Learning Engineer (MLE). Consulte o arquivo README.md para mais detalhes sobre os autores.
 
 ### Funcionalidades:
 - **Listagem e busca** de livros com paginação

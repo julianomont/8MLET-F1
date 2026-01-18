@@ -1,6 +1,13 @@
 # Books API
 
-API REST para consulta de dados de livros extraídos via web scraping do site [books.toscrape.com](http://books.toscrape.com). Desenvolvida como projeto para o curso de **Machine Learning Engineer** da FIAP - 8MLET.
+**Tech Challenge - Fase 1 - PosTech 8MLET**
+
+* **Por:** Juliano Monteiro (rm369594)
+* **GitHub:** [https://github.com/julianomont](https://github.com/julianomont)
+* **Email:** [juliano.monteiro@outlook.com](mailto:juliano.monteiro@outlook.com)
+* **LinkedIn:** [https://www.linkedin.com/in/julianofmonteiro](https://www.linkedin.com/in/julianofmonteiro)
+
+API REST para consulta de dados de livros extraídos via web scraping do site [books.toscrape.com](http://books.toscrape.com).
 
 ### Links Importantes
 
