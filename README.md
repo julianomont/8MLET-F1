@@ -1,6 +1,6 @@
 # Books API
 
-**Tech Challenge - Fase 1 - Welcome to Fundamentos ML**
+**Tech Challenge - Fase 1 - Welcome to Machine Learning Engineering**
 
 * **Por:** Juliano Monteiro (rm369594)
 * **GitHub:** [https://github.com/julianomont](https://github.com/julianomont)
@@ -20,6 +20,60 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 | **Vídeo Demonstração** | em breve |
 
 ---
+
+## Resumo Técnico: Books API (Tech Challenge Fase 1: Welcome to Machine Learning Engineering)
+
+### Visão Geral do Projeto
+O projeto Books API foi desenvolvido como parte do Tech Challenge da pós-graduação em Machine Learning Engineering (8MLET) da FIAP. O objetivo principal foi criar uma arquitetura robusta de Engenharia de Dados capaz de coletar, armazenar, processar e disponibilizar dados para futuros modelos de Machine Learning.
+
+O sistema simula um pipeline real de dados, onde informações desestruturadas (HTML de um site de livros) são transformadas em dados estruturados, enriquecidos e servidos via API para consumidores (Dashboards, Cientistas de Dados ou aplicações front-end).
+
+### Arquitetura da Solução
+A solução adotou uma Clean Architecture modular, separando responsabilidades em camadas distintas para garantir manutenibilidade e escalabilidade:
+
+- **Camada de Coleta (Ingestão)**: Responsável pelo Web Scraping. Utiliza técnicas de navegação assíncrona para extrair dados de ~1000 livros do site Books to Scrape.
+- **Camada de Persistência**: Utiliza um banco de dados relacional (PostgreSQL) hospedado na nuvem (Supabase/GCP) para garantir integridade e persistência dos dados.
+- **Camada de API (Serving)**: Uma API RESTful desenvolvida em FastAPI, que expõe os dados coletados através de endpoints documentados e protegidos.
+- **Camada de Apresentação**: Um Dashboard interativo em Streamlit, focado em monitoramento de métricas técnicas e de negócio.
+
+### Stack Tecnológica
+As tecnologias foram escolhidas visando performance e modernidade:
+
+| **Componente** | **Tecnologia** | **Justificativa** |
+| --- | --- | --- |
+| **Linguagem** | Python 3.11+ | Padrão da indústria para Data Science e ML. |
+| **API Framework** | FastAPI | Alta performance (assíncrono), validação automática (Pydantic) e documentação nativa (Swagger). |
+| **Banco de Dados** | PostgreSQL | SGBD relacional robusto, ideal para dados estruturados de livros e vendas. |
+| **ORM** | SQLAlchemy 2.0 | Abstração segura do banco de dados com suporte a operações assíncronas. |
+| **Scraping** | BeautifulSoup4 + httpx | BeautifulSoup para parse de HTML e httpx para requisições HTTP assíncronas concorrentes. |
+| **Observabilidade** | Custom Middleware | Log estruturado e coleta de métricas em tempo real (tempo de resposta, erros). |
+| **Dashboard** | Streamlit | Criação rápida de interfaces de dados com Python puro. |
+| **Infraestrutura** | Google Cloud Run | Deploy serverless (containers), focando em custo x benefício e escalabilidade zero-to-one. |
+
+### Fluxo de Dados (Pipeline)
+
+1. **Trigger**: O processo inicia via script (run_scraper.py) ou endpoint protegido (POST /scraping).
+2. **Extração**: O Scraper navega nas páginas de categorias do site alvo.
+3. **Transformação**: Os dados brutos (preço com símbolos, strings de rating) são limpos e convertidos para tipos numéricos/booleanos.
+4. **Carga**: Os dados tratados são salvos no PostgreSQL, atualizando registros existentes ou criando novos (Upsert logic).
+
+**Consumo**:
+- **API**: Disponibiliza queries complexas (filtros de preço, busca textual).
+- **ML**: Endpoint /ml/training-data entrega o dataset pronto para treino (split features/target).
+- **Dashboard**: Consome /metrics para monitorar a saúde do sistema.
+
+### Segurança e Infraestrutura
+- **Autenticação**: Implementada via JWT (JSON Web Tokens). Apenas usuários autenticados (Admin) podem disparar cargas de dados ou acessar métricas sensíveis.
+- **Deploy (CI/CD)**:
+  - Imagens Docker otimizadas (Multi-stage build).
+  - Pipeline automatizado via Google Cloud Build.
+  - Armazenamento de imagens no Artifact Registry.
+  - Execução no Cloud Run com injeção segura de segredos (DATABASE_URL, JWT_SECRET_KEY) em tempo de execução.
+
+### Diferenciais do Projeto
+- **Pipeline "ML-Ready"**: O sistema não apenas armazena dados, mas já possui endpoints dedicados a servir Features pré-processadas para modelos de Machine Learning.
+- **Monitoramento Integrado**: O dashboard não é apenas visual, ele consome métricas reais da API, permitindo observar latência e taxas de erro em tempo real.
+- **Design Resiliente**: Tratamento de erros no scraper com retentativas automáticas (retry logic) e fallback de conexão no banco de dados.
 
 ## Índice
 
