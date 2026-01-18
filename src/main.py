@@ -11,15 +11,13 @@ from src.core.middleware import LoggingMiddleware
 
 # Cria a instância do FastAPI com configurações
 app = FastAPI(
-    title=settings.PROJECT_NAME,
+    title="Books API",
     description="""
-## API de Livros
-
 Esta API fornece acesso a uma base de dados de livros extraídos via web scraping do site https://books.toscrape.com/.
 
-### Tech Challenge - Fase 1 - PosTech 8MLET
+### Tech Challenge - Fase 1 - Welcome to Machine Learning Engineering
 
-API desenvolvida para o curso de Machine Learning Engineer (MLE). Consulte o arquivo README.md para mais detalhes sobre os autores.
+API desenvolvida para o curso de Machine Learning Engineer (8MLET). Consulte o arquivo README.md para maiores detalhes: https://github.com/julianomont/8MLET-F1.git
 
 ### Funcionalidades:
 - **Listagem e busca** de livros com paginação
@@ -29,9 +27,8 @@ API desenvolvida para o curso de Machine Learning Engineer (MLE). Consulte o arq
 - **Autenticação JWT** para rotas protegidas
 - **Métricas de performance** via /api/v1/metrics
 
-
 ### Segurança
-- **Autenticação JWT** 
+- **Autenticação JWT**
 - **Login:** admin
 - **Senha:** admin-8MLET
 
@@ -41,9 +38,8 @@ API desenvolvida para o curso de Machine Learning Engineer (MLE). Consulte o arq
 
 ### Métricas
 - **Métricas de performance** via /api/v1/metrics
-
     """,
-    version="1.0.0",
+    version="1.0.15",
     openapi_url=f"{settings.API_V1_STR}/openapi.json",
     docs_url="/docs",
     redoc_url="/redoc",
