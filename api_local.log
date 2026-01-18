@@ -128,3 +128,9 @@ INFO:     127.0.0.1:51026 - "GET /api/v1/health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:51031 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
 2026-01-18 09:25:25,209 [INFO] books-api: REQUEST: {"request_id": "1768739125208", "timestamp": "2026-01-18T12:25:25.209453", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 0.83, "error": null}
 INFO:     127.0.0.1:51033 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
+2026-01-18 09:25:31,139 [INFO] books-api: REQUEST: {"request_id": "1768739130253", "timestamp": "2026-01-18T12:25:31.139455", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/health", "query_params": "", "status_code": 200, "duration_ms": 886.08, "error": null}
+INFO:     127.0.0.1:51049 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-01-18 09:25:31,148 [INFO] books-api: REQUEST: {"request_id": "1768739131147", "timestamp": "2026-01-18T12:25:31.148433", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/", "query_params": "", "status_code": 200, "duration_ms": 0.8, "error": null}
+INFO:     127.0.0.1:51055 - "GET /api/v1/metrics/ HTTP/1.1" 200 OK
+2026-01-18 09:25:31,175 [INFO] books-api: REQUEST: {"request_id": "1768739131173", "timestamp": "2026-01-18T12:25:31.175129", "client_ip": "127.0.0.1", "method": "GET", "endpoint": "/api/v1/metrics/requests", "query_params": "limit=50", "status_code": 200, "duration_ms": 1.16, "error": null}
+INFO:     127.0.0.1:51057 - "GET /api/v1/metrics/requests?limit=50 HTTP/1.1" 200 OK
