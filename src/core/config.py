@@ -36,7 +36,8 @@ class Settings(BaseSettings):
                  raise ValueError("DATABASE_URL environment variable is required")
     
     # Configurações JWT
-    JWT_SECRET_KEY: str = "chave-secreta-desenvolvimento-altere-em-producao"
+    # Em produção, substitua por segredo real via env var
+    JWT_SECRET_KEY: str = "1055bdc4c58da24046dcf6d2bbec3fc6f083d798e8b4e2c46bf28421dab7632b"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7

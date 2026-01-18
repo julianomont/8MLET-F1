@@ -32,7 +32,8 @@ gcloud run deploy $API_SERVICE_NAME \
     --region $REGION \
     --platform managed \
     --allow-unauthenticated \
-    --port 8000
+    --port 8000 \
+    --set-env-vars DATABASE_URL="postgresql://postgres:C[3O6F?O9y?#+/2}@34.168.206.28:5432/postgres",JWT_SECRET_KEY="1055bdc4c58da24046dcf6d2bbec3fc6f083d798e8b4e2c46bf28421dab7632b"
 
 # Get the API URL
 API_URL=$(gcloud run services describe $API_SERVICE_NAME --region $REGION --format 'value(status.url)')
@@ -50,7 +51,7 @@ gcloud run deploy $DASHBOARD_SERVICE_NAME \
     --platform managed \
     --allow-unauthenticated \
     --port 8501 \
-    --set-env-vars API_URL="$API_URL/api/v1"
+    --set-env-vars API_URL="$API_URL/api/v1",DATABASE_URL="postgresql://postgres:C[3O6F?O9y?#+/2}@34.168.206.28:5432/postgres"
 
 # Get the Dashboard URL
 DASHBOARD_URL=$(gcloud run services describe $DASHBOARD_SERVICE_NAME --region $REGION --format 'value(status.url)')

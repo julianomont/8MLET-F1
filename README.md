@@ -1,6 +1,6 @@
 # Books API
 
-API REST para consulta de dados de livros extraídos via web scraping do site [books.toscrape.com](http://books.toscrape.com). Desenvolvida como projeto para o curso de **Machine Learning Engineer** da FIAP - Turma Nov 2025.
+API REST para consulta de dados de livros extraídos via web scraping do site [books.toscrape.com](http://books.toscrape.com). Desenvolvida como projeto para o curso de **Machine Learning Engineer** da FIAP - 8MLET.
 
 ## Links Importantes
 
@@ -31,7 +31,7 @@ API REST para consulta de dados de livros extraídos via web scraping do site [b
 
 Desenvolver uma API REST robusta que:
 1. **Extrai dados** via web scraping de ~1000 livros do site books.toscrape.com
-2. **Armazena** os dados em banco SQLite com persistência
+2. **Armazena** os dados em banco PostgreSQL (Supabase/CloudSQL)
 3. **Disponibiliza** endpoints HTTP para consulta, filtros e estatísticas
 4. **Prepara dados** para consumo por modelos de Machine Learning
 5. **Monitora** performance com logs estruturados e métricas
@@ -61,7 +61,7 @@ Desenvolver uma API REST robusta que:
 | **pandas** | Análise de dados e estatísticas |
 | **python-jose** | Autenticação JWT |
 | **Streamlit** | Dashboard de monitoramento |
-| **SQLite** | Banco de dados |
+| **PostgreSQL** | Banco de dados relacional |
 
 ---
 
@@ -104,7 +104,7 @@ flowchart TB
 
     subgraph Data["💾 Dados"]
         Repository["Repository"]
-        SQLite[("SQLite\nbooks.db")]
+        PG[("PostgreSQL")]
         Scraper["Web Scraper"]
         Site["books.toscrape.com"]
     end
@@ -127,9 +127,9 @@ flowchart TB
     StatsService --> Repository
     MLService --> Repository
 
-    Repository --> SQLite
+    Repository --> PG
     Scraper --> Site
-    Scraper --> SQLite
+    Scraper --> PG
 ```
 
 ### Estrutura de Pastas
@@ -168,7 +168,7 @@ sequenceDiagram
     participant E as Endpoint
     participant S as Service
     participant D as Repository
-    participant DB as SQLite
+    participant DB as PostgreSQL
 
     C->>R: GET /api/v1/books
     R->>M: Logging + Métricas
@@ -229,6 +229,8 @@ Crie um arquivo `.env` na raiz do projeto:
 DEBUG=True
 API_V1_STR=/api/v1
 PROJECT_NAME="API de Livros"
+DATABASE_URL=postgresql://user:pass@host:port/dbname
+JWT_SECRET_KEY=sua-chave-secreta-aqui
 ```
 
 ---
@@ -241,7 +243,7 @@ PROJECT_NAME="API de Livros"
 python scripts/run_scraper.py
 ```
 
-Este comando extrai ~1000 livros e salva em `data/books.db`.
+Este comando extrai ~1000 livros e salva no banco de dados configurado.
 
 ### 2. Iniciar a API
 
@@ -255,10 +257,30 @@ uvicorn src.main:app --reload
 - **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
 ### 4. Executar Testes
-
 ```bash
+# Executa testes unitários e de integração
 pytest
 ```
+
+---
+
+## Deploy Automático (GCP)
+
+Para realizar o deploy no Google Cloud Platform (Cloud Run):
+
+1. **Configurar o script de deploy**:
+   Edite o arquivo `deploy.sh` e atualize as variáveis `DATABASE_URL` e `JWT_SECRET_KEY`.
+
+2. **Executar o script**:
+   ```bash
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```
+   
+   O script irá:
+   - Criar o repositório no Artifact Registry (se não existir)
+   - Construir as imagens Docker da API e Dashboard
+   - Fazer o deploy no Cloud Run configurando as variáveis de ambiente
 
 ---
 
